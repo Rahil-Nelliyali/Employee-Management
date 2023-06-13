@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>EmployeeHub</title>
+    <title>View Employee Details</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -51,7 +51,7 @@
         <div class="container py-3">
             <div class="d-flex align-items-center">
                 <a href="index.html">
-                    <h2 class="text-white fw-bold m-0">EmployeeHub</h2>
+                    <h2 class="text-white fw-bold m-0">All Employees</h2>
                 </a>
                 <div class="ms-auto d-flex align-items-center">
                     <small class="ms-4"><i class="fa fa-map-marker-alt me-3"></i>Calicut, India</small>
@@ -101,46 +101,50 @@
     </div>
     <!-- Navbar End -->
 
+  
+
+    <!-- Page Header Start -->
+
+    <div class="container">
 
   
-   <!-- Carousel Start -->
-<div class="container-fluid px-0 mb-5">
-    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="w-100 h-50vh" src="{% static 'img/banner.jpg' %}" alt="Image">
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="row justify-content-start">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img class="w-100 h-50vh" src="{% static 'img/banner.jpg' %}" alt="Image">
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="row justify-content-end">
-                          
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</div>
-<!-- Carousel End -->
-
-
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Bonus</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Role</th>
+            <th scope="col">Department</th>
+            <th scope="col">Location</th>
+            <th scope="col">Hire date</th>
+          </tr>
+        </thead>
+        {% for emp in emps%}
+        <tbody>
+          <tr>
+            <th scope="row">{{emp.id}}</th>
+            <td>{{emp.first_name}}</td>
+            <td>{{emp.last_name}}</td>
+            <td>{{emp.salary}}</td>
+            <td>{{emp.bonus}}</td>
+            <td>{{emp.phone}}</td>
+            <td>{{emp.role.name}}</td>
+            <td>{{emp.dept.name}}</td>
+            <td>{{emp.dept.location}}</td>
+            <td>{{emp.hire_date}}</td>
+          
+          </tr>
+          
+        </tbody>
+        {% endfor %}
+      </table>
+   
+  </div>
+   <!-- Page Header End -->
 
 
 
@@ -151,9 +155,8 @@
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                     &copy; <a class="fw-medium text-light" href="#">EmployeeHub</a>, All Right Reserved.
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                  
-                </div>
+                
+                
             </div>
         </div>
     </div>
