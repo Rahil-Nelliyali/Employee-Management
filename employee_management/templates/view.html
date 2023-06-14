@@ -35,6 +35,8 @@
 
     <!-- Template Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    
 </head>
 
 <body>
@@ -93,7 +95,7 @@
                         <a href="{% url 'filter' %}" class="nav-item nav-link">Filter Employee Details</a>
                     </div>
                     <div class="ms-auto d-none d-lg-block">
-                        <a href="" class="btn btn-primary rounded-pill py-2 px-3">Get A Quote</a>
+                    
                     </div>
                 </div>
             </nav>
@@ -121,6 +123,7 @@
             <th scope="col">Department</th>
             <th scope="col">Location</th>
             <th scope="col">Hire date</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         {% for emp in emps%}
@@ -136,7 +139,11 @@
             <td>{{emp.dept.name}}</td>
             <td>{{emp.dept.location}}</td>
             <td>{{emp.hire_date}}</td>
+            <td><a href="{% url 'remove' emp.id %}"><button type="button" onclick="return confirm('This user will be deleted. Are you sure?')" class="btn btn-danger">Delete</button> </a></td>
           
+
+           
+             
           </tr>
           
         </tbody>
