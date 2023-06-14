@@ -4,6 +4,13 @@ from django.shortcuts import render, HttpResponse
 from . models import Employee, Role, Department
 # Create your views here.
 
+def login(request):
+    return render(request, 'login.html')
+
+def signup(request):
+    return render(request, 'signup.html')
+
+
 def index(request):
     return render(request, 'index.html')
 

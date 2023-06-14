@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+
+</head>
+<body>
+    <div class="containe">
+        <form class="form" method="POST" action="{% url 'signup' %}">
+            <h3 style="color:white;">Enter credentials</h3>
+            
+            <input class="input" type="text" placeholder="E-Mail I.D.">
+            <input class="input" type="password" name="password" placeholder="Enter password">
+            <input class="input" type="password" name="password" placeholder="Confirm password">
+        
+            <center><button type="submit" class="button">Signup</button></center>
+        </form>
+    </div>
+    
+</body>
+</html>
